@@ -1,7 +1,10 @@
-import 'package:apps/pages/home_page.dart';
+import 'package:apps/router.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_web_plugins/url_strategy.dart';
 
 void main() {
+  // turn off the # in the URLs on the web
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -10,13 +13,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return MaterialApp.router(
+      routerConfig: router,
+      title: 'Routing Demo',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color.fromARGB(255, 255, 255, 255),
+          foregroundColor: Color.fromARGB(255, 0, 100, 146),
+          shadowColor: Color.fromARGB(255, 110, 110, 110),
+          elevation: 0.3,
+        ),
       ),
-      home: const HomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
