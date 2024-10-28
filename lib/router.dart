@@ -25,18 +25,15 @@ final GoRouter router = GoRouter(
           path: RoutePaths.items,
           builder: (context, state) => const ItemListPage(),
           routes: [
-            // day1 task: GoRouteを追加
             GoRoute(
               path: 'create',
               builder: (context, state) => const ItemCteatePage(),
             ),
-            // day1 task: GoRouteを追加ここまで
             GoRoute(
               path: ':id',
               builder: (context, state) =>
                   ItemDetailPage(itemId: state.pathParameters['id']!),
             ),
-            // day1 task: GoRouteを追加
             GoRoute(
               path: ':id/edit',
               builder: (context, state) {
@@ -44,7 +41,6 @@ final GoRouter router = GoRouter(
                 return ItemEditPage(itemId: id);
               },
             ),
-            // day1 task: GoRouteを追加ここまで
           ],
         ),
       ],

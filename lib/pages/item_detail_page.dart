@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart'; // day1 task: 追加
+import 'package:go_router/go_router.dart';
 
 class ItemDetailPage extends StatelessWidget {
   const ItemDetailPage({required this.itemId, super.key});
@@ -12,8 +12,6 @@ class ItemDetailPage extends StatelessWidget {
         title: Text('Item Detail: $itemId'),
       ),
       body: Center(
-        // day1 task: ItemEditPageに遷移するボタンを追加
-        // Columnを使って、TextとElevatedButtonと縦に並べる
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -25,7 +23,6 @@ class ItemDetailPage extends StatelessWidget {
             ),
           ],
         ),
-        // day1 task: ここまで
       ),
     );
   }

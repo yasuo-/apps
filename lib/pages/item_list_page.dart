@@ -1,4 +1,4 @@
-import 'package:apps/router.dart'; // day1 task: importを追加
+import 'package:apps/router.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,8 +12,6 @@ class ItemListPage extends StatelessWidget {
         title: const Text('Items'),
       ),
       body: Center(
-        // day1 task: ItemCreatePageに遷移するボタンを追加
-        // Columnを使って、ElevatedButtonとListViewを縦に並べる
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -37,7 +35,6 @@ class ItemListPage extends StatelessWidget {
             ),
           ],
         ),
-        // day1 task: ここまで
       ),
     );
   }
