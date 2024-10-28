@@ -1,0 +1,23 @@
+{
+    "editor.formatOnSave": true, // 保存でコード整形
+    "editor.codeActionsOnSave": {
+        "source.fixAll": "explicit", // コード修正
+        "source.organizeImports": "explicit", // importの順番整理
+    },
+    // 括弧の色分けと補助線追加
+    "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": true,
+    // エクスプローラ上で検索結果に表示させない
+    "files.exclude": {
+        "**/*.freezed.dart": true,
+        "**/*.g.dart": true
+    },
+    // file name変更時関連fileも変更
+    "dart.renameFilesWithClasses": "always",
+    "dart.useLegacyAnalyzerProtocol": true,
+    // ツリー構造のガイド
+    "dart.previewFlutterUiGuides": true,
+    "dart.previewFlutterUiGuidesCustomTracking": true,
+    "editor.lineHeight": 15, // つながった線にするため固定
+    // see.. https://dartcode.org/
+}
