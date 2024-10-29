@@ -1,6 +1,6 @@
 import 'package:apps/pages/home_page.dart';
-import 'package:apps/pages/item_create_page.dart'; // day1 task: importを追加
-import 'package:apps/pages/item_detail_page.dart'; // day1 task: importを追加
+import 'package:apps/pages/item_create_page.dart';
+import 'package:apps/pages/item_detail_page.dart';
 import 'package:apps/pages/item_edit_page.dart';
 import 'package:apps/pages/item_list_page.dart';
 import 'package:go_router/go_router.dart';
@@ -9,7 +9,6 @@ class RoutePaths {
   static const String home = '/';
   static const String items = '/items';
   static const String itemDetail = '/items/:id';
-  // day1 task: pathを追加
   static const String itemCreate = '/items/create';
   static const String itemEdit = '/items/:id/edit';
 }
