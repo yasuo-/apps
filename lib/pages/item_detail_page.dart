@@ -1,3 +1,4 @@
+import 'package:apps/widgets/header_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -23,35 +24,17 @@ class ItemDetailPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '備品管理',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        '備品管理詳細テキストテキストテキストテキスト',
-                        style: TextStyle(fontSize: 14, color: Colors.grey),
-                      ),
-                    ],
+                  const HeaderWidget(
+                    title: '備品管理詳細',
+                    subtitle: '備品管理詳細テキストテキストテキストテキスト',
                   ),
-                  Row(
-                    children: [
-                      const SizedBox(width: 8),
-                      ElevatedButton(
-                        onPressed: () => context.go('/items/$itemId/edit'),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.black, // ボタンテキストの色
-                        ),
-                        child: const Text('編集'),
-                      ),
-                    ],
+                  ElevatedButton(
+                    onPressed: () => context.go('/items/$itemId/edit'),
+                    style: ElevatedButton.styleFrom(
+                      foregroundColor: Colors.white,
+                      backgroundColor: Colors.black,
+                    ),
+                    child: const Text('編集'),
                   ),
                 ],
               ),

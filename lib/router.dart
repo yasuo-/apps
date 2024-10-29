@@ -26,7 +26,7 @@ final GoRouter router = GoRouter(
           routes: [
             GoRoute(
               path: 'create',
-              builder: (context, state) => const ItemCteatePage(),
+              builder: (context, state) => const ItemCreatePage(),
             ),
             GoRoute(
               path: ':id',

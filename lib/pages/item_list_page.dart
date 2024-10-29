@@ -1,4 +1,5 @@
-import 'package:apps/router.dart';
+import 'package:apps/widgets/button_group_widget.dart';
+import 'package:apps/widgets/header_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -24,44 +25,15 @@ class ItemListPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        '備品管理一覧',
-                        style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        '備品管理テキストテキストテキストテキスト',
-                        style: TextStyle(fontSize: 14, color: Colors.grey),
-                      ),
-                    ],
+                  const HeaderWidget(
+                    title: '備品管理一覧',
+                    subtitle: '備品管理テキストテキストテキストテキスト',
                   ),
-                  Row(
-                    children: [
-                      TextButton(
-                        onPressed: () {
-                          // Export処理を実装
-                        },
-                        child: const Text(
-                          'CSV Export',
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      ElevatedButton(
-                        onPressed: () => context.go(RoutePaths.itemCreate),
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.black, // ボタンテキストの色
-                        ),
-                        child: const Text('追加する'),
-                      ),
-                    ],
+                  ButtonGroupWidget(
+                    onExport: () {
+                      // Export処理を実装
+                    },
+                    onAdd: () => context.go('/items/create'),
                   ),
                 ],
               ),
