@@ -28,7 +28,7 @@ final GoRouter router = GoRouter(
             // day1 task: GoRouteを追加
             GoRoute(
               path: 'create',
-              builder: (context, state) => const ItemCteatePage(),
+              builder: (context, state) => const ItemCreatePage(),
             ),
             // day1 task: GoRouteを追加ここまで
             GoRoute(
