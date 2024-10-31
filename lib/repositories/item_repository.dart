@@ -37,6 +37,7 @@ class ItemRepository implements IItemRepository {
     try {
       final response = await _dio.get<dynamic>('/items/$id');
       final data = response.data;
+      print('fetchItem data: $data');
       return Item.fromJson(data as Map<String, dynamic>);
     } catch (e) {
       rethrow;
