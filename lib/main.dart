@@ -18,6 +18,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     // Dioのインスタンスを作成
     final dio = Dio();
+    // ログインターセプターを追加
+    dio.interceptors.add(
+      LogInterceptor(
+        requestBody: true,
+        responseBody: true,
+        responseHeader: false,
+        requestHeader: false,
+      ),
+    );
 
     // モックレスポンスを設定
     ItemRepositoryMock(dio);
