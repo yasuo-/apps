@@ -70,7 +70,7 @@ class ItemRepositoryMock {
       ..onPost(
         '/items',
         data: {
-          'items': {
+          'item': {
             'name': '新しい備品', // 備品名に入力
             'description': '新しい備品の説明です。', // 備品内容に入力
             'location': '倉庫C', // 保存場所に入力
@@ -88,7 +88,7 @@ class ItemRepositoryMock {
       ..onPut(
         RegExp(r'/items/\d+'),
         data: {
-          'items': {
+          'item': {
             'name': '更新された備品', // 備品名に入力
             'description': '更新された備品の説明です。', // 備品内容に入力
             'location': '更新された倉庫', // 保存場所に入力
