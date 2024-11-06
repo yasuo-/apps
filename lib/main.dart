@@ -1,4 +1,3 @@
-import 'package:apps/mocks/item_repository_mock.dart';
 import 'package:apps/router.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Dioのインスタンスを作成
-    final dio = Dio();
+    final dio = Dio(
+      BaseOptions(
+        baseUrl: 'ベースURL', // ベースURLを設定
+        headers: {
+          'X-Api-Key': ' APIキー', // APIキーを設定
+        },
+      ),
+    );
     // ログインターセプターを追加
     dio.interceptors.add(
       LogInterceptor(
@@ -29,7 +35,7 @@ class MyApp extends StatelessWidget {
     );
 
     // モックレスポンスを設定
-    ItemRepositoryMock(dio);
+    // ItemRepositoryMock(dio);
 
     // Dioインスタンスをアプリ全体に提供
     return Provider<Dio>(

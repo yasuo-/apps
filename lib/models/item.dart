@@ -12,11 +12,11 @@ class Item {
   // serverから受け取った時にDartに変える
   factory Item.fromJson(Map<String, dynamic> json) {
     return Item(
-      id: json['id'] as String,
+      id: json['id'].toString(),
       name: json['name'] as String,
       description: json['description'] as String,
       location: json['location'] as String,
-      count: json['count'] as int,
+      count: json['quantity'] as int,
       createdAt: DateTime.parse(json['created_at'] as String),
     );
   }
@@ -32,11 +32,11 @@ class Item {
   // serverに送る時jsonに変える
   Map<String, dynamic> toJson() {
     return {
-      'items': {
+      'item': {
         'name': name,
         'description': description,
         'location': location,
-        'count': count,
+        'quantity': count,
       },
     };
   }
