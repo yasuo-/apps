@@ -70,10 +70,12 @@ class ItemRepositoryMock {
       ..onPost(
         '/items',
         data: {
-          'name': '新しい備品', // 備品名に入力
-          'description': '新しい備品の説明です。', // 備品内容に入力
-          'location': '倉庫C', // 保存場所に入力
-          'count': 8, //  個数に入力
+          'items': {
+            'name': '新しい備品', // 備品名に入力
+            'description': '新しい備品の説明です。', // 備品内容に入力
+            'location': '倉庫C', // 保存場所に入力
+            'count': 8, //  個数に入力
+          },
         },
         (server) => server.reply(201, {
           'name': '新しい備品',
@@ -86,10 +88,12 @@ class ItemRepositoryMock {
       ..onPut(
         RegExp(r'/items/\d+'),
         data: {
-          'name': '更新された備品', // 備品名に入力
-          'description': '更新された備品の説明です。', // 備品内容に入力
-          'location': '更新された倉庫', // 保存場所に入力
-          'count': 15, //  個数に入力
+          'items': {
+            'name': '更新された備品', // 備品名に入力
+            'description': '更新された備品の説明です。', // 備品内容に入力
+            'location': '更新された倉庫', // 保存場所に入力
+            'count': 15, //  個数に入力
+          },
         },
         (server) => server.reply(200, {
           'id': '1',

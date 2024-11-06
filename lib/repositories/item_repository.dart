@@ -49,6 +49,7 @@ class ItemRepository implements IItemRepository {
   Future<void> createItem(Item item) async {
     try {
       final body = item.toJson();
+      print('createItem data: $body');
       await _dio.post<void>('/items', data: body);
     } catch (e) {
       print('Error in createItem: $e');

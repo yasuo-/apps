@@ -32,10 +32,12 @@ class Item {
   // serverに送る時jsonに変える
   Map<String, dynamic> toJson() {
     return {
-      'name': name,
-      'description': description,
-      'location': location,
-      'count': count,
+      'items': {
+        'name': name,
+        'description': description,
+        'location': location,
+        'count': count,
+      },
     };
   }
 }
